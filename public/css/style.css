@@ -1,0 +1,231 @@
+html{
+  width: 100%;
+  height: auto;
+}
+.navleiste{
+  height: 20%;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+h1{
+  text-align: center;
+  font-size: 45px;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas: 'one one one one'
+  'two three four five'
+  'six seven eight nine';
+  grid-gap: 100px;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: #e7e7e7;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 60px;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 3%;
+  font-size: 25px;
+}
+.grid-item1{
+  grid-area: one;
+  margin-left: 20%;
+  margin-right: 20%;
+
+}
+.grid-item2{
+  grid-area: two;
+  margin-left: 2%;
+}
+.grid-item3{
+  grid-area: three;
+}
+.grid-item4{
+  grid-area: four;
+  width: 60%;
+}
+.grid-item5{
+  grid-area: five;
+  margin-left: 2%;
+}
+.grid-item6{
+  grid-area: six;
+  margin-left: 2%;
+}
+.grid-item7{
+  grid-area: seven;
+}
+.grid-item8{
+  grid-area: eight;
+}
+.grid-item9{
+  grid-area: nine;
+  margin-left: 2%;
+}
+.hintergrund{
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+body{
+  margin: 0px;
+  font-family: "Aldrich", sans-serif;
+}
+.championsleague{
+  width: 150px;
+  text-align: center;
+}
+.superleague{
+  width: 200px;
+  text-align: center;
+}
+.europaleague{
+  width: 250px;
+  text-align: center;
+}
+.laliga{
+  width: 110px;
+  text-align: center;
+}
+.premierleague{
+  width: 90px;
+  text-align: center;
+}
+.transfers{
+  width: 150px;
+  text-align: center;
+}
+.serieA{
+  width: 200px;
+  text-align: center;
+}
+.bundesliga{
+  width: 150px;
+  text-align: center;
+}
+.bilderText{
+  text-decoration: none;
+  color: black;
+}
+.navtext{
+  text-decoration: none;
+  color: black;
+}
+.logincontainer{
+  background-color: #e7e7e7;
+  height: 600px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.title{
+  background-color: white;
+  margin-top: 5%;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+}
+.kommentarcontainer{
+  background-color: white;
+  height: 700px;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+  overflow: auto;
+}
+#neuerKommentar{
+  background-color: white;
+  margin-bottom: 5%;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 1%;
+  text-align: center;
+}
+#kommifeld{
+  margin-bottom: 5%;
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+}
+#send_icon{
+  margin-bottom: -2%;
+}
+.logintable{
+  width: 100%;
+  text-align: left;
+  font-size: 35px;
+}
+.tablelinks{
+  width: 50%;
+  text-align: center;
+}
+td {
+  padding-bottom: 10%;
+}
+.tableinput{
+  font-size: 30px;
+  font-family: "Aldrich", sans-serif;
+}
+.ueberschrift{
+  font-size: 40px;
+  text-align: center;
+}
+.tablesubmit{
+  font-size: 30px;
+  font-family: "Aldrich", sans-serif;
+  margin-left: 20%;
+}
+h2{
+  margin: 0px;
+}
+.login{
+  text-align: center;
+  
+  font-size: 35px;
+}
+.loginlink{
+  text-decoration: none;
+  color: black;
+}
+header{
+  height: 200px;
+}
+.tableheader{
+  width: 100%;
+  height: 15%;
+}
+
+.tableheadercell{
+  width: 25%;
+  padding-top: 2%;
+}
+.tableheadercellmiddle{
+  padding-top: 2%;
+}
+.kommentarbox{
+  background-color: #e7e7e7;
+  text-align: left;
+  margin-left: 2%;
+  margin-right: 50%;
+  padding: 1%;
+  margin-top: 1.5%;
+  border: 1px solid black;
+  overflow: hidden;
+  clear: both;
+}
+#th2{
+  text-align: right;
+}
+#th3{
+  text-align:right; 
+}
+.nolink{
+  text-decoration: none;
+}
+textarea{
+  max-width: 600px;
+}
