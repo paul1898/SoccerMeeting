@@ -1,5 +1,4 @@
   <body>
-    <img class="hintergrund" src="images/hintergrund.jpg" alt="background_img">
     <div class="grid-container">
       <div class="grid-item1">Tritt hitzigen Diskussionen bei über alle Themenbereiche des Fussballs!<br /> Unsere Themenbereiche:</div>
       <?php if(isset($login) && $login): ?>
