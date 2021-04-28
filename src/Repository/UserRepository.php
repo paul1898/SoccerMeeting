@@ -31,14 +31,14 @@ class UserRepository extends Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-    public function create($firstName, $lastName, $email, $password)
+    public function create($username, $email, $password)
     {
         $password = sha1($password);
 
-        $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (username, email, password) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
+        $statement->bind_param('sss', htmlentities($username), htmlentities($email), $password);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
@@ -46,8 +46,10 @@ class UserRepository extends Repository
 
         return $statement->insert_id;
     }
+
     public function readByUserAttributes($username, $password)
     {
+        $password = sha1($password); 
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE username=? and password=? ";
 
@@ -74,4 +76,5 @@ class UserRepository extends Repository
         // Den gefundenen Datensatz zurückgeben
         return $row;
     }
+    
 }

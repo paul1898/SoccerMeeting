@@ -2,11 +2,7 @@ html{
   width: 100%;
   height: auto;
 }
-h1{
-  text-align: center;
-  font-size: 45px;
-  color: white;
-}
+
 .grid-container {
   display: grid;
   grid-template-areas: 'one one one one'
@@ -16,13 +12,15 @@ h1{
   padding: 10px;
 }
 .grid-container > div {
-  background-color: #e7e7e7;
+  background-color: ivory;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 60px;
   font-size: 35px;
   text-align: center;
   margin-top: 3%;
   font-size: 25px;
+  border-radius:10px 25%;
+
 }
 .grid-item1{
   grid-area: one;
@@ -39,11 +37,12 @@ h1{
 }
 .grid-item4{
   grid-area: four;
-  width: 60%;
+  margin-left: 2%;
+  margin-right: 2; 
 }
 .grid-item5{
   grid-area: five;
-  margin-left: 2%;
+  margin-right: 2%;
 }
 .grid-item6{
   grid-area: six;
@@ -57,7 +56,7 @@ h1{
 }
 .grid-item9{
   grid-area: nine;
-  margin-left: 2%;
+  margin-right: 2%;
 }
 .hintergrund{
   background-size: cover;
@@ -109,7 +108,9 @@ body{
 }
 .navtext{
   text-decoration: none;
-  color: black;
+  text-align: center;
+  font-size: 45px;
+  color: white;
 }
 .logincontainer{
   background-color: #e7e7e7;
@@ -118,6 +119,17 @@ body{
   margin-bottom: 5%;
   margin-left: 15%;
   margin-right: 15%;
+}
+.logincontainer{
+  background-color: #e7e7e7;
+  height: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%; 
+}
+.registerlink{
+  font-size: 20px;
 }
 .title{
   background-color: white;
@@ -186,10 +198,11 @@ h2{
 }
 .loginlink{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 header{
   height: 200px;
+  color: black;
 }
 .tableheader{
   width: 100%;
@@ -197,12 +210,17 @@ header{
 }
 
 .tableheadercell{
-  width: 25%;
+  width: 20%;
   padding-top: 2%;
 }
 .tableheadercellmiddle{
   padding-top: 2%;
 }
+
+.emptytable{
+  width: 40%;
+}
+
 .kommentarbox{
   background-color: #e7e7e7;
   text-align: left;

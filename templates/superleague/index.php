@@ -1,6 +1,4 @@
 <body>
-
-<img class="hintergrund" src="/images/hintergrund.jpg" alt="bild">
 <div class="title">
     <h2>European Super League</h2>
 </div>
@@ -12,7 +10,7 @@
 				<tr>
 					<th><div><b><?= $username; ?></b></div></th>
 					<th id="th2"><div><a class="nolink" href="/superleague/delete?id=<?= $kommentar->id; ?>">Löschen</a></div></th>
-					<th id="th3"><div><a class="nolink" href="/superleauge/?id=<?= $kommentar->id; ?>">Bearbeiten</a></div></th>
+					<th id="th3"><div><a class="nolink" href="/superleague/?id=<?= $kommentar->id; ?>">Bearbeiten</a></div></th>
 				</tr>
 			</table>
 			

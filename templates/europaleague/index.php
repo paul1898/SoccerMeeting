@@ -1,6 +1,4 @@
 <body>
-
-<img class="hintergrund" src="/images/hintergrund.jpg" alt="bild">
 <div class="title">
     <h2>Europa League</h2>
 </div>

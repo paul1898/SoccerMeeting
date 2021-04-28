@@ -12,13 +12,18 @@
   <header>
     <table class="tableheader">
       <tr>
-        <td class="tableheadercell"></td>
+        <td class="emptytable"></td>
         <td class="tableheadercellmiddle" ><h1><a class="navtext" href="/">Soccer Meeting</a></h1></td>
-      <td class="tableheadercell">
-        <?php
-          echo ((isset($login) && $login) ? '<a class="loginlink" href="/user/logout"><p class="login">Logout</p></a>' : '<a class="loginlink" href="/user"><p class="login">Login</p></a>');
-        ?>
-    </td>
-    </tr>
+        <td class="tableheadercell">
+          <?php
+            echo ((isset($login) && $login) ? '<a class="loginlink" href="/user/logout"><p class="login">Logout</p></a>' : '<a class="loginlink" href="/user/index"><p class="login">Login</p></a>');
+          ?>
+        </td>
+        <td class="tableheadercell">
+          <?php
+            echo ((isset($login) && $login) ? true : '<a class="loginlink" href="/user/create"><p class="login">Registrieren</p></a>');
+          ?>
+        </td>
+      </tr>
     </table>
   </header>

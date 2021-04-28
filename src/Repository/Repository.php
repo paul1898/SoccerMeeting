@@ -123,6 +123,26 @@ class Repository
         return $row;
     }
 
+    public function readUsername()
+    {
+        $query = "SELECT user.username FROM {$this->tableName} INNER JOIN user on comment.userID=user.id";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query); 
+        
+        $statement->execute(); 
+
+        $result = $statement->get_result(); 
+        if (!$result) {
+            throw new Exception($statement->$error); 
+        }
+
+        $row = $result->fetch_object(); 
+
+        $result->close(); 
+
+        return $row; 
+    }
+
     /**
      * Diese Funktion gibt ein array mit allen Datensätzen aus der Tabelle
      * zurück.

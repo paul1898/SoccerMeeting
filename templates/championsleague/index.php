@@ -1,6 +1,4 @@
 <body>
-
-<img class="hintergrund" src="/images/hintergrund.jpg" alt="bild">
 <div class="title">
     <h2>Champions League</h2>
 </div>
@@ -10,7 +8,7 @@
 		<div class="kommentarbox">
 			<table style="width:100%">
 				<tr>
-					<th><div><b><?= $username; ?></b></div></th>
+					<th><div><b>Anonym</b></div></th>
 					<th id="th2"><div><a class="nolink" href="/championsleague/delete?id=<?= $kommentar->id; ?>">Löschen</a></div></th>
 					<th id="th3"><div><a class="nolink" href="/championsleague/?id=<?= $kommentar->id; ?>">Bearbeiten</a></div></th>
 				</tr>
@@ -24,7 +22,6 @@
 					<button class="textareasubmit" type="submit">Ändern</button>
 				</form>
 			<?php endif; ?>
-
 		</div>
 		<?php endif; ?>
 	<?php endforeach; ?>

@@ -32,17 +32,31 @@ class UserController
 
     public function doCreate()
     {
-        if (isset($_POST['send'])) {
-            $firstName = $_POST['fname'];
-            $lastName = $_POST['lname'];
+        if (is_string($_POST['username']) && !empty($_POST['username']) && !empty($_POST['email']) && 
+        is_string($_POST['password']) && !empty($_POST['password']) && is_string($_POST['password1']) && !empty($_POST['password1'])) { 
+            echo "Alle Eingaben müssen korrekt ausgefüllt werden!"; 
+            $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $userRepository = new UserRepository();
-            $userRepository->create($firstName, $lastName, $email, $password);
-        }
+            $password1 = $_POST['password1']; 
 
+            $regexUsername = ' ^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$'; 
+
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL) && $password != $password1 && !preg_match($regexUsername, $username)) {
+                echo "Ungültige Eingabeinformationen!"; 
+            }
+            else {
+                $userRepository = new UserRepository();
+                $userRepository->create($username, $email, $password);
+    
+                header("location:/user/index");
+            }
+        }
+        else 
+        {
+            header("location:/user/create"); 
+        }
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
     }
 
     public function delete()
@@ -58,11 +72,14 @@ class UserController
     {
         if(is_string($_POST['username']) && !empty($_POST['username']) && is_string($_POST['password']) && !empty($_POST['password'])){
             $repository = new UserRepository();
+            
+            $username = $_POST['username']; 
+            $password = $_POST['password']; 
 
-            $user = $repository->readByUserAttributes($_POST['username'], $_POST['password']);
+            $user = $repository->readByUserAttributes($username, $password);
 
             if (!$user){
-                header("location:/user");
+                header("location:/user/index");
             }else{
                 $_SESSION['id'] = $user->id;
                 $_SESSION['username'] = $user->username;
@@ -71,7 +88,7 @@ class UserController
             }
         }
         else{
-            echo "gang wäg"; //FEHLER <-----
+            header("location:/user/index");
         }
     }
     public function logOut()

@@ -33,17 +33,16 @@ class KommentarRepository extends Repository
      */
     public function create($text, $theme)
     {
-        $query = "INSERT INTO $this->tableName (text, theme) VALUES (?, ?)";
+        $query = "INSERT INTO $this->tableName (text, theme, userID) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('si', htmlentities($text), $theme);
-
+        $statement->bind_param('sii', htmlentities($text), $theme, $_SESSION['id']);
+        
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
 
         return $statement->insert_id;
     }       
-    /*$text = $db->escape_string($_POST['kommentar']); 
-    $query = SELECT * FROM $this->tableName WHERE text='$text'";*/ 
+    
 }
